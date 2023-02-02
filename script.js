@@ -14,3 +14,24 @@ if (computerChoice ==  playerChoice) {
     console.log('A Draw!');
 }
 
+if (playerChoice == 'Paper' && computerChoice == 'Rock') {
+    console.log('You Win')
+
+}
+else if (computerChoice == 'Scissors') {
+    console.log('You Lose');
+}
+if (playerChoice == 'Rock' && computerChoice == 'Scissors') {
+    console.log('You Win')
+
+}
+else if (computerChoice == 'Paper') {
+    console.log('You Lose');
+}
+if (playerChoice == 'Scissors' && computerChoice == 'Paper') {
+    console.log('You Win')
+
+}
+else if (computerChoice == 'Rock') {
+    console.log('You Lose');
+}
