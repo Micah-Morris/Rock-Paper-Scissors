@@ -5,33 +5,40 @@ function getComputerChoice(choice) {
 }
 var choice = ['Rock', 'Paper', 'Scissors'];
 var computerChoice = getComputerChoice (choice)
-console.log(computerChoice);
+console.log('The Computer chose ' + computerChoice);
 
 
 let playerChoice = prompt('Rock, Paper, or Scissors?')
+console.log('You chose ' + playerChoice);
+
+computerChoice = computerChoice.toLowerCase()
+playerChoice = playerChoice.toLowerCase()
 
 if (computerChoice ==  playerChoice) {
     console.log('A Draw!');
 }
 
-if (playerChoice == 'Paper' && computerChoice == 'Rock') {
+if (playerChoice == 'paper' && computerChoice == 'rock') {
     console.log('You Win')
 
 }
-else if (computerChoice == 'Scissors') {
+if (playerChoice == 'paper' && computerChoice == 'scissors') {
     console.log('You Lose');
+
 }
-if (playerChoice == 'Rock' && computerChoice == 'Scissors') {
+if (playerChoice == 'rock' && computerChoice == 'scissors') {
     console.log('You Win')
 
 }
-else if (computerChoice == 'Paper') {
-    console.log('You Lose');
+if (playerChoice == 'rock' && computerChoice == 'paper') {
+    console.log('You Lose')
+
 }
-if (playerChoice == 'Scissors' && computerChoice == 'Paper') {
+
+if (playerChoice == 'scissors' && computerChoice == 'paper') {
     console.log('You Win')
 
 }
-else if (computerChoice == 'Rock') {
+if (playerChoice == 'scissors' && computerChoice == 'rock') {
     console.log('You Lose');
 }
