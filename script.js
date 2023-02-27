@@ -3,7 +3,7 @@ let wins = 0
 let losses = 0
 
 
-function playRound(array) {
+var playRound = function(array) {
     let playerChoice = array.toString()
     var choice = ['Rock', 'Paper', 'Scissors'];
 
@@ -64,5 +64,18 @@ else if (losses > wins) {
     console.log('You Lost the Contest');
 }
 }
+
 document.getElementById("rock")
-rock.addEventListener("click", playRound(['rock']));
+rock.addEventListener("click", 
+function () {playRound (['rock'])}
+);
+
+document.getElementById("paper")
+paper.addEventListener("click", 
+function () {playRound (['paper'])}
+);
+
+document.getElementById("scissors")
+scissors.addEventListener("click", 
+function () {playRound (['scissors'])}
+);
