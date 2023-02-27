@@ -2,19 +2,19 @@
 let wins = 0
 let losses = 0
 
-for (let i = 0; i < 5; i++) {
-    
 
-function getComputerChoice(choice) {
+function playRound(array) {
+    let playerChoice = array.toString()
+    var choice = ['Rock', 'Paper', 'Scissors'];
+
+    function getComputerChoice(choice) {
     return choice [Math.floor(Math.random() * choice.length)]
     
 }
-var choice = ['Rock', 'Paper', 'Scissors'];
 var computerChoice = getComputerChoice (choice)
 console.log('The Computer chose ' + computerChoice);
 
 
-let playerChoice = prompt('Rock, Paper, or Scissors?')
 console.log('You chose ' + playerChoice);
 
 
@@ -56,10 +56,13 @@ if (playerChoice == 'scissors' && computerChoice == 'rock') {
     console.log('You Lose')
     losses++ 
 }
-}
+
 if (wins > losses) {
     console.log('You Won the Contest');
 }
 else if (losses > wins) {
     console.log('You Lost the Contest');
 }
+}
+document.getElementById("rock")
+rock.addEventListener("click", playRound(['rock']));
