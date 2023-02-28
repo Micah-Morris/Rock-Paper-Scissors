@@ -12,58 +12,54 @@ var playRound = function(array) {
     
 }
 var computerChoice = getComputerChoice (choice)
-console.log('The Computer chose ' + computerChoice);
 
+const computerMove = document.getElementById("computerMove");
+computerMove.textContent = 'The Computer chose ' + computerChoice;
 
-console.log('You chose ' + playerChoice);
+const playerMove = document.getElementById('playerMove');
+playerMove.textContent = 'You chose ' + playerChoice;
 
+let result = ''
 
 
 computerChoice = computerChoice.toLowerCase()
 playerChoice = playerChoice.toLowerCase()
 
+
 if (computerChoice ==  playerChoice) {
-    console.log('A Draw!');
+    result = 'A Draw!';
 }
 
-if (playerChoice == 'paper' && computerChoice == 'rock') {
-    console.log('You Win')
+if 
+(playerChoice == 'paper' && computerChoice == 'rock' || 
+playerChoice == 'rock' && computerChoice == 'scissors' ||
+playerChoice == 'scissors' && computerChoice == 'paper' ) {
+    result = 'You Win';
     wins++
+    
 
 }
-if (playerChoice == 'paper' && computerChoice == 'scissors') {
-    console.log('You Lose');
+if (playerChoice == 'paper' && computerChoice == 'scissors' || 
+playerChoice == 'rock' && computerChoice == 'paper' ||
+playerChoice == 'scissors' && computerChoice == 'rock') {
+    result = ('You Lose');
     losses++
 
 }
-if (playerChoice == 'rock' && computerChoice == 'scissors') {
-    console.log('You Win')
-    wins++
+const score = document.getElementById('score');
+score.textContent = 'Player ' + wins + ' Computer ' + losses
 
+const outcome = document.getElementById('outcome');
+outcome.textContent = result;
+
+if (wins >= 5) {
+    score.textContent = 'You Won the Contest. Refresh to Play Again.';
 }
-if (playerChoice == 'rock' && computerChoice == 'paper') {
-    console.log('You Lose')
-    losses++
-
+else if (losses >= 5) {
+    score.textContent = 'You Lost the Contest. Refresh to Play Again.';
 }
-
-if (playerChoice == 'scissors' && computerChoice == 'paper') {
-    console.log('You Win')
-    wins++
-
-}
-if (playerChoice == 'scissors' && computerChoice == 'rock') {
-    console.log('You Lose')
-    losses++ 
 }
 
-if (wins > losses) {
-    console.log('You Won the Contest');
-}
-else if (losses > wins) {
-    console.log('You Lost the Contest');
-}
-}
 
 document.getElementById("rock")
 rock.addEventListener("click", 
@@ -79,3 +75,4 @@ document.getElementById("scissors")
 scissors.addEventListener("click", 
 function () {playRound (['scissors'])}
 );
+
